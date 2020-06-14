@@ -121,7 +121,7 @@ const generate_result = (data, headers) => {
         let local_url = "https://api.spotify.com/v1/playlists/" + plist_id;
         let tbl_row = document.createElement('tr');
         tbl_row.setAttribute("class", "border_Class");
-        tbl_body.appendChild(tbl_row);
+        //tbl_body.appendChild(tbl_row);
 
         fetch(local_url, {headers: headers})
             .then( (local_data) => local_data.json() )
@@ -136,6 +136,7 @@ const generate_result = (data, headers) => {
                 let filter_collaborative = document.getElementById("collab_filter");
                 
                 if (filter_collaborative.checked){
+                    tbl_body.appendChild(tbl_row);
                     if (data.collaborative == true) {
                         let tbl_field = document.createElement('td');
                         tbl_field.setAttribute("class", "border_Class");
@@ -153,6 +154,7 @@ const generate_result = (data, headers) => {
                     }
                 }
                 else{
+                   tbl_body.appendChild(tbl_row);
                 let tbl_field = document.createElement('td');
                 tbl_field.setAttribute("class", "border_Class");
                 image = document.createElement("img");
