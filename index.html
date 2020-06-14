@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="skeleton.css" rel="stylesheet" type="text/css">
+    <title>playscraper</title>
+</head>
+<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<body>
+    <h1 align="center">playscraper</h1>
+    <form id="frm1" action="/action_page.php">
+        token: <input type="text" id="token_field"><br>
+        keyword: <input type="text" id="keyword_field"><br>
+        pages: <input type="text" id="pages_field" value="1"><br>
+            
+        get collaborative only <input type="checkbox" id="collab_filter" name="collab_filter"><br>
+        
+        <button type="button" class="btn btn-default" onclick="run()"> RUN </button>
+        <iframe id="txtArea1" style="display:none"></iframe>
+        
+        
+      </form>
+      <button id="btnExport" onclick="fnExcelReport();"> EXPORT </button>
+    <div class = "result" id = "result_div">
+        <table id="result_table" class="sortable">
+            <thead>
+                <th>image</th>
+                <th>playlist id</th>
+                <th>name</th>
+                <th>collaborative</th>
+                <th>link</th>
+                <th class="sorttable_numeric">followers</th>
+                <th>owner</th>
+            </thead>
+            <tbody id="result_body" class="border_class">
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="core.js"></script>
+</body>
+</html>
